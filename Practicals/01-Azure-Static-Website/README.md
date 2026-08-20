@@ -42,7 +42,7 @@ To deploy and host a static website using Azure Blob Storage and verify its acce
 
 ## 3. Procedure / Main Tasks
 
-The practical is divided into the following major activities so that each step can be performed and verified separately.
+The practical is divided into major activities so that each step can be performed and verified clearly.
 
 ---
 
@@ -58,6 +58,10 @@ The practical is divided into the following major activities so that each step c
 6. Open the created resource group and verify that it is available.
 
 **Theory / Observation:** The resource group is used to keep the resources created for this practical together. It also makes it easier to remove all the lab resources at the end.
+
+**📸 Screenshot — Azure Resource Group / Environment**
+
+![Azure Resource Group](../../Screenshot%202026-08-19%20203500.png)
 
 ---
 
@@ -76,6 +80,10 @@ The practical is divided into the following major activities so that each step c
 
 **Theory / Observation:** The Storage Account provides the storage environment in which the static website files are stored and served.
 
+**📸 Screenshot — Storage Account**
+
+![Storage Account](../../Screenshot%202026-08-19%20203636.png)
+
 ---
 
 ## Task 3 — Enable Static Website Hosting
@@ -92,68 +100,56 @@ The practical is divided into the following major activities so that each step c
 
 **Theory / Observation:** After enabling static website hosting, Azure creates the `$web` container automatically and provides a Primary Endpoint for accessing the website.
 
+**📸 Screenshot — Static Website Configuration**
+
+![Static Website Configuration](../../Screenshot%202026-08-19%20203734.png)
+
 ---
 
-## Task 4 — Create the Website File Locally
+## Task 4 — Create and Upload Website Files
 
 ### Steps
 
 1. Open a text editor such as Notepad on the local computer.
 2. Create the main webpage using the HTML content given in the lab.
 3. Save the file with the exact name `index.html`.
-4. Keep the file ready for uploading to Azure.
-
-**Theory / Observation:** `index.html` is the default document of the static website. It is displayed when the Primary Endpoint is opened.
-
----
-
-## Task 5 — Upload `index.html` to the `$web` Container
-
-### Steps
-
-1. Return to the Azure portal and open the Storage Account.
-2. Under **Data storage**, select **Containers**.
-3. Open the `$web` container.
-4. Select **Upload**.
-5. Browse and select the `index.html` file.
-6. Upload the file.
-7. Verify that `index.html` appears in the `$web` container.
+4. Create the custom error page and save it as `404.html`.
+5. Return to the Storage Account and open **Data storage → Containers → `$web`**.
+6. Select **Upload** and upload `index.html` and `404.html`.
+7. Verify that both files are present in the `$web` container.
 
 **Theory / Observation:** The `$web` container stores the files that make up the static website. Azure serves these files through the Primary Endpoint.
 
----
+**📸 Screenshot — `$web` Container with Website Files**
 
-## Task 6 — Create and Upload the Custom 404 Page
-
-### Steps
-
-1. Create the custom error webpage in the text editor.
-2. Use the required heading such as **404 - Page Not Found**.
-3. Save the file exactly as `404.html`.
-4. Open the `$web` container in Azure.
-5. Select **Upload** and choose `404.html`.
-6. Verify that both `index.html` and `404.html` are present.
-
-**Theory / Observation:** The `404.html` file is used as the custom error document when a requested webpage or file does not exist.
+![Web Container](../../Screenshot%202026-08-19%20203835.png)
 
 ---
 
-## Task 7 — Verify the Website and 404 Page
+## Task 5 — Verify the Website and Test 404 Page
 
 ### Steps
 
 1. Open **Data management → Static website** in the Storage Account.
 2. Open the **Primary endpoint**.
-3. Verify that the main landing page is displayed.
+3. Verify that the `index.html` webpage is displayed.
 4. Add a non-existing path such as `/fakepage` to the website URL.
 5. Press **Enter** and verify that the custom **404 - Page Not Found** page is displayed.
-6. Use the home-page link, if provided, and verify that it returns to the main page.
+6. Return to the main page and verify that the website is working correctly.
 
 **Theory / Observation:** This verifies both normal website access and custom error handling through the Azure static website endpoint.
 
+**📸 Screenshot — Static Website Running**
+
+![Static Website](../../Screenshot%202026-08-19%20203932.png)
+
+**📸 Screenshot — 404 Error Page**
+
+![404 Error Page](../../Screenshot%202026-08-19%20204033.png)
+
 ---
 
-## Task 8 — Update the Website Content
+## Task 6 — Update Website Content
 
 ### Steps
 
@@ -163,31 +159,37 @@ The practical is divided into the following major activities so that each step c
 4. Open the `$web` container in Azure.
 5. Select **Upload** and choose the updated `index.html`.
 6. Enable **Overwrite** if the file already exists.
-7. Upload the updated file.
-8. Open the Primary Endpoint and refresh the page.
-9. Verify that the updated Version 2 landing page is displayed.
+7. Upload the updated file and refresh the Primary Endpoint.
+8. Verify that the updated Version 2 landing page is displayed.
 
-**Theory / Observation:** When the same blob is uploaded again with overwrite enabled, the previous version is replaced. The website then serves the updated content through the same Primary Endpoint.
+**Theory / Observation:** When the same blob is uploaded again with overwrite enabled, the previous version is replaced and the website serves the updated content.
+
+**📸 Screenshot — Updated Website**
+
+![Updated Website](../../Screenshot%202026-08-19%20204200.png)
 
 ---
 
-## Task 9 — Review Blob Properties and Access Tier
+## Task 7 — Review Blob Properties and Access Tier
 
 ### Steps
 
 1. Open the `$web` container.
 2. Select `index.html` to open its properties.
 3. On the Overview tab, review the **Blob URL, Access tier and Content type**.
-4. Verify the access tier and content type required by the lab, such as **Hot** and `text/html`.
+4. Verify the required settings such as **Hot** access tier and `text/html` content type.
 5. Select **Edit** to review the stored HTML content if required.
-6. Cancel without making unnecessary changes.
-7. Review the properties of `404.html` in the same way.
+6. Review the properties of `404.html` in the same way.
 
-**Theory / Observation:** Blob properties show how the website files are stored and served. For HTML website files, the Content type should be `text/html`. The Hot access tier is suitable when the content is accessed frequently.
+**Theory / Observation:** Blob properties show how the website files are stored and served. For HTML website files, the Content type should be `text/html`.
+
+**📸 Screenshot — Blob Properties**
+
+![Blob Properties](../../Screenshot%202026-08-19%20204348.png)
 
 ---
 
-## Task 10 — Delete the Resource Group and Verify Cleanup
+## Task 8 — Delete the Resource Group and Verify Cleanup
 
 ### Steps
 
@@ -201,6 +203,10 @@ The practical is divided into the following major activities so that each step c
 8. Optionally try the old Primary Endpoint and verify that the website is no longer accessible.
 
 **Theory / Observation:** Deleting the resource group removes the resources created inside it. Cleanup is important after an Azure lab so that unused resources do not continue to consume Azure resources or cause unnecessary charges.
+
+**📸 Screenshot — Resource Group Cleanup**
+
+![Resource Group Cleanup](../../Screenshot%202026-08-19%20214405.png)
 
 ---
 
@@ -218,6 +224,4 @@ The static website was successfully deployed using Azure Blob Storage. The `inde
 
 ---
 
-## Screenshots
-
-The original screenshots are kept in the parent `Practicals` folder with their original names. They have not been moved, renamed or deleted.
+> **Note:** The original screenshots remain in the parent `Practicals` folder with their original names. They have not been moved, renamed or deleted.
