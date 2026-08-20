@@ -42,6 +42,10 @@ To deploy and host a static website using Azure Blob Storage and verify its acce
 
 ## 3. Procedure / Main Tasks
 
+The practical is divided into major activities so that each step can be performed and verified clearly.
+
+---
+
 ## Task 1 — Prepare the Azure Environment
 
 ### Steps
@@ -53,13 +57,11 @@ To deploy and host a static website using Azure Blob Storage and verify its acce
 5. Select the required region and create the resource group.
 6. Open the created resource group and verify that it is available.
 
-**Theory / Observation:** The resource group keeps the resources created for this practical together and makes cleanup easier.
+**Theory / Observation:** The resource group is used to keep the resources created for this practical together. It also makes it easier to remove all the lab resources at the end.
 
-### 📸 Screenshot Evidence
+**📸 Screenshot — Azure Resource Group / Environment**
 
-![Azure Environment](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20203500.png)
-
-![Resource Group](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20203636.png)
+![Azure Resource Group](Screenshot%202026-08-19%20203500.png)
 
 ---
 
@@ -71,19 +73,16 @@ To deploy and host a static website using Azure Blob Storage and verify its acce
 2. Select **+ Create**.
 3. Select `rg-gp-static-website` as the resource group.
 4. Enter the storage account name assigned by the lab.
-5. Choose the required region and storage configuration.
-6. Select **Review + create** and then **Create**.
-7. After deployment, select **Go to resource**.
+5. Choose the required region.
+6. Select the required storage configuration shown in the lab, such as Standard performance and LRS redundancy.
+7. Select **Review + create** and then **Create**.
+8. After deployment is completed, select **Go to resource**.
 
-**Theory / Observation:** The Storage Account provides the Azure storage environment in which the static website files are stored and served.
+**Theory / Observation:** The Storage Account provides the storage environment in which the static website files are stored and served.
 
-### 📸 Screenshot Evidence
+**📸 Screenshot — Storage Account**
 
-![Storage Account](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20203809.png)
-
-![Storage Account Configuration](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20203950.png)
-
-![Storage Account Created](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20204037.png)
+![Storage Account](Screenshot%202026-08-19%20203636.png)
 
 ---
 
@@ -92,24 +91,18 @@ To deploy and host a static website using Azure Blob Storage and verify its acce
 ### Steps
 
 1. Open the created Storage Account.
-2. Go to **Data management → Static website**.
+2. From the left menu, go to **Data management → Static website**.
 3. Set **Static website** to **Enabled**.
 4. Enter `index.html` as the **Index document name**.
 5. Enter `404.html` as the **Error document path**.
 6. Select **Save**.
 7. Note the **Primary endpoint** displayed by Azure.
 
-**Theory / Observation:** After static website hosting is enabled, Azure creates the `$web` container automatically and provides a Primary Endpoint.
+**Theory / Observation:** After enabling static website hosting, Azure creates the `$web` container automatically and provides a Primary Endpoint for accessing the website.
 
-### 📸 Screenshot Evidence
+**📸 Screenshot — Static Website Configuration**
 
-![Static Website Settings](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20204117.png)
-
-![Static Website Enabled](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20204137.png)
-
-![Primary Endpoint](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20205700.png)
-
-![Static Website Configuration](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20205734.png)
+![Static Website Configuration](Screenshot%202026-08-19%20203734.png)
 
 ---
 
@@ -117,28 +110,19 @@ To deploy and host a static website using Azure Blob Storage and verify its acce
 
 ### Steps
 
-1. Create the main webpage and save it as `index.html`.
-2. Create the custom error page and save it as `404.html`.
-3. Open **Storage Account → Containers → `$web`**.
-4. Select **Upload** and upload `index.html`.
-5. Upload `404.html` in the same way.
-6. Verify that the website files are present in the `$web` container.
+1. Open a text editor such as Notepad on the local computer.
+2. Create the main webpage using the HTML content given in the lab.
+3. Save the file with the exact name `index.html`.
+4. Create the custom error page and save it as `404.html`.
+5. Return to the Storage Account and open **Data storage → Containers → `$web`**.
+6. Select **Upload** and upload `index.html` and `404.html`.
+7. Verify that both files are present in the `$web` container.
 
 **Theory / Observation:** The `$web` container stores the files that make up the static website. Azure serves these files through the Primary Endpoint.
 
-### 📸 Screenshot Evidence
+**📸 Screenshot — `$web` Container with Website Files**
 
-![Website Files](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20205853.png)
-
-![Web Container](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20205932.png)
-
-![Upload Website Files](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20210232.png)
-
-![Uploaded Files](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20210431.png)
-
-![Web Container Files](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20210528.png)
-
-![Website File Details](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20210602.png)
+![Web Container](Screenshot%202026-08-19%20203809.png)
 
 ---
 
@@ -149,23 +133,19 @@ To deploy and host a static website using Azure Blob Storage and verify its acce
 1. Open **Data management → Static website** in the Storage Account.
 2. Open the **Primary endpoint**.
 3. Verify that the `index.html` webpage is displayed.
-4. Enter a URL/path for a page that does not exist.
-5. Verify that the configured `404.html` page is displayed.
+4. Add a non-existing path such as `/fakepage` to the website URL.
+5. Press **Enter** and verify that the custom **404 - Page Not Found** page is displayed.
 6. Return to the main page and verify that the website is working correctly.
 
-**Observation:** The website is accessible through the Azure static website endpoint and the custom error page is displayed for a missing resource.
+**Theory / Observation:** This verifies both normal website access and custom error handling through the Azure static website endpoint.
 
-### 📸 Screenshot Evidence
+**📸 Screenshot — Static Website Running**
 
-![Primary Endpoint](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20210701.png)
+![Static Website](Screenshot%202026-08-19%20203950.png)
 
-![Website Running](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20210838.png)
+**📸 Screenshot — 404 Error Page**
 
-![Website Verification](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20210924.png)
-
-![404 Page Test](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20211115.png)
-
-![404 Error Page](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20211408.png)
+![404 Error Page](Screenshot%202026-08-19%20204037.png)
 
 ---
 
@@ -174,24 +154,19 @@ To deploy and host a static website using Azure Blob Storage and verify its acce
 ### Steps
 
 1. Open the existing `index.html` file in the text editor.
-2. Modify the content as required and save the file.
-3. Open the `$web` container in Azure.
-4. Upload the updated `index.html`.
-5. Enable **Overwrite** if the file already exists.
-6. Refresh the Primary Endpoint.
-7. Verify that the updated content is displayed.
+2. Replace the old content with the updated Version 2 content given in the lab.
+3. Save the file as `index.html`.
+4. Open the `$web` container in Azure.
+5. Select **Upload** and choose the updated `index.html`.
+6. Enable **Overwrite** if the file already exists.
+7. Upload the updated file and refresh the Primary Endpoint.
+8. Verify that the updated Version 2 landing page is displayed.
 
-**Theory / Observation:** Uploading the updated blob with overwrite enabled replaces the previous content, so the live website displays the new version.
+**Theory / Observation:** When the same blob is uploaded again with overwrite enabled, the previous version is replaced and the website serves the updated content.
 
-### 📸 Screenshot Evidence
+**📸 Screenshot — Updated Website**
 
-![Update Website](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20211614.png)
-
-![Updated File](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20211654.png)
-
-![Updated Website](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20211859.png)
-
-![Updated Website Verification](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20212125.png)
+![Updated Website](Screenshot%202026-08-19%20204200.png)
 
 ---
 
@@ -201,21 +176,16 @@ To deploy and host a static website using Azure Blob Storage and verify its acce
 
 1. Open the `$web` container.
 2. Select `index.html` to open its properties.
-3. Review the **Blob URL, Access tier and Content type**.
+3. On the Overview tab, review the **Blob URL, Access tier and Content type**.
 4. Verify the required settings such as **Hot** access tier and `text/html` content type.
-5. Review the properties of `404.html` if required.
+5. Select **Edit** to review the stored HTML content if required.
+6. Review the properties of `404.html` in the same way.
 
-**Theory / Observation:** Blob properties show how the website files are stored and served. HTML website files should have the `text/html` content type.
+**Theory / Observation:** Blob properties show how the website files are stored and served. For HTML website files, the Content type should be `text/html`.
 
-### 📸 Screenshot Evidence
+**📸 Screenshot — Blob Properties**
 
-![Blob Content](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20212733.png)
-
-![Blob Properties](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20212805.png)
-
-![Access Tier](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20212838.png)
-
-![Content Type](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20213055.png)
+![Blob Properties](Screenshot%202026-08-19%20204348.png)
 
 ---
 
@@ -228,25 +198,15 @@ To deploy and host a static website using Azure Blob Storage and verify its acce
 3. Select **Delete resource group**.
 4. Enter the resource group name in the confirmation box.
 5. Select **Delete** and confirm the deletion.
-6. Verify that the resource group and its lab resources have been removed.
+6. Wait for the deletion notification.
+7. Search Resource groups again and verify that `rg-gp-static-website` is no longer available.
+8. Optionally try the old Primary Endpoint and verify that the website is no longer accessible.
 
-**Theory / Observation:** Deleting the resource group removes the resources created for the practical and completes the lab cleanup.
+**Theory / Observation:** Deleting the resource group removes the resources created inside it. Cleanup is important after an Azure lab so that unused resources do not continue to consume Azure resources or cause unnecessary charges.
 
-### 📸 Screenshot Evidence
+**📸 Screenshot — Resource Group Cleanup**
 
-![Cleanup](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20213158.png)
-
-![Delete Resource Group](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20213217.png)
-
-![Deletion Confirmation](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20213419.png)
-
-![Cleanup Verification](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20213637.png)
-
-![Final Cleanup](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20213804.png)
-
-![Final Verification](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20213822.png)
-
-![Practical Completion](https://raw.githubusercontent.com/rutuu0228/cloud-computing/main/Practicals/Screenshot%202026-08-19%20214005.png)
+![Resource Group Cleanup](Screenshot%202026-08-19%20214405.png)
 
 ---
 
@@ -262,4 +222,6 @@ The static website was successfully deployed using Azure Blob Storage. The `inde
 - Website content can be updated by replacing the corresponding blob in the `$web` container.
 - Deleting the resource group after the practical completes the lab cleanup.
 
-> **Note:** All original screenshot files remain in the parent `Practicals` folder. They have not been moved, renamed or deleted. The README uses direct raw GitHub image URLs so the screenshots render inside the README itself.
+---
+
+> **Note:** All practical screenshots are now stored in this `01-Azure-Static-Website` folder, so the README uses local image paths. The duplicate screenshots in the parent `Practicals` folder can be safely deleted.
