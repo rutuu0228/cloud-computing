@@ -15,26 +15,26 @@ To organize Azure resources using tags and protect them from accidental deletion
 ### Azure Resource Tags
 
 - Tags are name-value pairs used to organize and identify Azure resources.
-- Tags can help in resource management, filtering, organization and cost tracking.
+- Tags help in resource management, filtering, organization and cost tracking.
 - A tag consists of a **Name** and a corresponding **Value**.
 
 ### Azure Resource Locks
 
 - Resource locks help prevent accidental modification or deletion of Azure resources.
-- The main lock types are **Read-only** and **Delete**.
-- A **Delete lock** allows normal use of a resource but prevents its deletion until the lock is removed.
+- The two main lock types are **Read-only** and **Delete**.
+- A **Delete** lock allows normal use of a resource but prevents its deletion until the lock is removed.
 - Locks can be applied at different scopes such as a resource, resource group or subscription.
 
 ---
 
 ## 3. Procedure / Main Tasks
 
-### Task 1 — Create Resources and Apply Tags
+### Exercise — Create resources and apply tags
 
 **Steps:**
 
 1. Sign in to the Azure portal using the provided lab environment.
-2. Create/open the required resource group and resources specified in the lab.
+2. Create or open the required resource group and resources specified in the lab.
 3. Open the **Tags** section for the required resource.
 4. Add the required tag **Name** and **Value** pairs.
 5. Save the changes.
@@ -42,7 +42,7 @@ To organize Azure resources using tags and protect them from accidental deletion
 
 **Observation:** Tags provide a simple way to organize Azure resources and associate them with useful information such as environment, department, owner or cost category.
 
-**📸 Screenshot — Resource Creation / Tags**
+**📸 Screenshots — Create resources and apply tags**
 
 ![Resource and Tags](Screenshots./Screenshot%202026-08-24%20205054.png)
 
@@ -52,7 +52,7 @@ To organize Azure resources using tags and protect them from accidental deletion
 
 ---
 
-### Task 2 — Apply a Resource Lock
+### Exercise — Apply resource locks
 
 **Steps:**
 
@@ -66,7 +66,7 @@ To organize Azure resources using tags and protect them from accidental deletion
 
 **Observation:** A Delete lock protects the resource from accidental deletion while allowing normal operations on the resource.
 
-**📸 Screenshot — Locks Settings**
+**📸 Screenshots — Apply resource locks**
 
 ![Locks Settings](Screenshots./Screenshot%202026-08-24%20210030.png)
 
@@ -76,7 +76,7 @@ To organize Azure resources using tags and protect them from accidental deletion
 
 ---
 
-### Task 3 — Test Lock Enforcement
+### Exercise — Test lock enforcement
 
 **Steps:**
 
@@ -89,7 +89,7 @@ To organize Azure resources using tags and protect them from accidental deletion
 
 **Observation:** The Delete lock successfully blocks deletion. After removing the lock, the resource can be deleted normally.
 
-**📸 Screenshot — Delete Attempt / Lock Enforcement**
+**📸 Screenshots — Test lock enforcement**
 
 ![Lock Enforcement](Screenshots./Screenshot%202026-08-24%20211035.png)
 
@@ -99,7 +99,7 @@ To organize Azure resources using tags and protect them from accidental deletion
 
 ---
 
-### Task 4 — Validate the Practical
+### Validate success
 
 **Steps:**
 
@@ -110,7 +110,7 @@ To organize Azure resources using tags and protect them from accidental deletion
 
 **Observation:** The required resource organization and protection controls were successfully configured and verified.
 
-**📸 Screenshot — Validation / Success**
+**📸 Screenshots — Validate success**
 
 ![Validation](Screenshots./Screenshot%202026-08-24%20211536.png)
 
@@ -118,7 +118,7 @@ To organize Azure resources using tags and protect them from accidental deletion
 
 ---
 
-### Task 5 — Clean Up Resources
+### Clean up resources
 
 **Steps:**
 
@@ -129,7 +129,7 @@ To organize Azure resources using tags and protect them from accidental deletion
 
 **Observation:** Cleaning up the resources prevents unnecessary resource usage and possible charges after completing the practical.
 
-**📸 Screenshot — Resource Cleanup**
+**📸 Screenshots — Clean up resources**
 
 ![Cleanup](Screenshots./Screenshot%202026-08-24%20212004.png)
 
@@ -151,6 +151,6 @@ Azure tags provide an effective method for organizing and tracking resources, wh
 
 ### Screenshot Evidence
 
-All Practical 02 screenshots are stored in the **`Screenshots.`** folder of this practical. The selected screenshots above are placed directly after the corresponding tasks as evidence of the completed lab activities.
+All Practical 02 screenshots are stored in the **`Screenshots.`** folder of this practical. The selected screenshots above are placed directly after the corresponding lab exercises as evidence of the completed activities.
 
-**Source:** Microsoft Learn guided project — *Organize and protect resources with tags and locks*. The project covers creating resources and applying tags, applying resource locks, testing lock enforcement, validating success and cleaning up resources. citeturn1view0
+**Source:** Microsoft Learn guided project — *Organize and protect resources with tags and locks*. The official project uses the exercise names **Create resources and apply tags**, **Apply resource locks**, **Test lock enforcement**, followed by **Validate success** and **Clean up resources**. citeturn1search0
