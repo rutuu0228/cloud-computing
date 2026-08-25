@@ -3,36 +3,33 @@
 ## Build a Simple Website Endpoint with Azure Functions
 
 ### 1. Aim
-To create and deploy a simple HTTP-triggered website endpoint using Azure Functions, test the endpoint, review invocation information, and apply access control.
+To create, deploy and test a simple HTTP-triggered website endpoint using Azure Functions, monitor its execution and apply access control.
 
 ### 2. Theory
 
 #### Azure Functions
-- Azure Functions is a serverless compute service used to run code without managing traditional servers.
-- It supports event-driven execution, including HTTP-triggered functions.
+- Azure Functions is a serverless service used to run code without managing servers.
+- It supports event-driven functions such as HTTP triggers.
 
 #### Function App
-- A Function App provides the environment for hosting and running Azure Functions.
-- It manages the function configuration, execution and monitoring.
+- A Function App provides the environment for hosting and running functions.
 
 #### HTTP Trigger
-- An HTTP trigger starts a function when an HTTP request is received.
-- The function can be accessed and tested through a public endpoint URL.
+- An HTTP trigger runs a function when an HTTP request is received and provides an endpoint URL.
 
 #### Application Insights
-- Application Insights provides monitoring and diagnostic information about function executions and requests.
+- Application Insights helps monitor function requests and execution details.
 
 ### 3. Procedure / Main Tasks
 
 ## Task 1 — Create the resource group
 
 **Steps:**
-1. Sign in to the Azure portal using the lab account.
-2. Open **Resource groups** from the Azure portal.
-3. Select **Create**.
-4. Enter the resource group name specified in the lab, select the required region, and create the resource group.
+1. Sign in to the Azure portal and open **Resource groups**.
+2. Select **Create**.
+3. Enter the required resource group name and region, then create it.
 
-**Observation:** The required resource group was created successfully and was ready to contain the Function App resources.
+**Observation:** The resource group was created successfully.
 
 ### 📸 Screenshots
 ![Task 1 Screenshot](Screenshots/Screenshot%202026-08-25%20201044.png)
@@ -42,14 +39,12 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 2 — Configure the Function App
 
 **Steps:**
-1. Search for **Function App** in the Azure portal and select **Create**.
-2. Select **Flex Consumption** as the hosting option.
-3. Select the created resource group and enter the required Function App name.
-4. Configure the region, **Node.js** runtime stack and required version.
-5. Keep the required monitoring settings enabled and select **Review + create**.
-6. Create the Function App and wait for deployment to complete.
+1. Select **Function App → Create** and choose **Flex Consumption**.
+2. Select the resource group and enter the required Function App name.
+3. Configure the region, **Node.js** runtime and required monitoring settings.
+4. Select **Review + create**, then create the Function App.
 
-**Observation:** The Function App was configured with Flex Consumption hosting and the required runtime and monitoring settings.
+**Observation:** The Function App was configured and deployed successfully.
 
 ### 📸 Screenshots
 ![Task 2 Screenshot 1](Screenshots/Screenshot%202026-08-25%20201232.png)
@@ -64,11 +59,10 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 
 **Steps:**
 1. Select the **Cloud Shell** icon in the Azure portal.
-2. Select **Bash** when prompted.
-3. Select the required subscription and complete the Cloud Shell setup.
-4. Wait until the Bash terminal opens and displays a `$` prompt.
+2. Select **Bash** and the required subscription.
+3. Wait for the terminal to open and display the `$` prompt.
 
-**Observation:** Azure Cloud Shell was opened successfully and the Bash command prompt was available.
+**Observation:** Azure Cloud Shell was opened successfully.
 
 ### 📸 Screenshots
 ![Task 3 Screenshot 1](Screenshots/Screenshot%202026-08-25%20202138.png)
@@ -80,12 +74,11 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 4 — Create the function project
 
 **Steps:**
-1. Create a new function project folder in Cloud Shell.
-2. Initialize the project using the Node.js runtime.
-3. Create the **GetStatus** HTTP-triggered function.
-4. Verify that the function files are created successfully.
+1. Create and initialize the function project using the Node.js runtime.
+2. Create the **GetStatus** HTTP-triggered function.
+3. Verify that the project and function files are created.
 
-**Observation:** The Node.js function project and HTTP-triggered function were created successfully.
+**Observation:** The function project and HTTP-triggered function were created successfully.
 
 ### 📸 Screenshots
 ![Task 4 Screenshot 1](Screenshots/Screenshot%202026-08-25%20202810.png)
@@ -98,11 +91,10 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 
 **Steps:**
 1. Find the Function App name using Azure CLI.
-2. Publish the function project to the Function App using the Azure Functions Core Tools command.
-3. Wait for the deployment to complete.
-4. Copy the **Invoke URL** shown in the deployment output.
+2. Publish the function project to the Function App.
+3. Wait for deployment and copy the **Invoke URL**.
 
-**Observation:** The GetStatus function was successfully deployed to the Azure Function App and an Invoke URL was provided.
+**Observation:** The GetStatus function was deployed successfully and an Invoke URL was provided.
 
 ### 📸 Screenshots
 ![Task 5 Screenshot](Screenshots/Screenshot%202026-08-25%20203609.png)
@@ -112,12 +104,11 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 6 — Test the HTTP endpoint in a browser
 
 **Steps:**
-1. Open a new browser tab.
-2. Paste the function **Invoke URL** into the address bar.
-3. Open the URL and verify the response.
-4. Confirm that the function returns the expected greeting without requiring sign-in.
+1. Open a browser and enter the function **Invoke URL**.
+2. Verify the response from the function.
+3. Confirm that the expected **Hello, world!** response is displayed.
 
-**Observation:** The HTTP endpoint responded successfully with the expected **Hello, world!** response.
+**Observation:** The HTTP endpoint responded successfully.
 
 ### 📸 Screenshots
 ![Task 6 Screenshot 1](Screenshots/Screenshot%202026-08-25%20214953.png)
@@ -129,12 +120,11 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 7 — Verify the function in the portal
 
 **Steps:**
-1. Open **Function App** in the Azure portal.
-2. Select the Function App created for the practical.
-3. In the **Functions** section, verify that **GetStatus** appears.
-4. Confirm that its trigger type is **HTTP**.
+1. Open the Function App and select **Functions**.
+2. Verify that **GetStatus** is listed.
+3. Confirm that its trigger type is **HTTP**.
 
-**Observation:** The GetStatus function was visible in the Function App with an enabled HTTP trigger.
+**Observation:** The GetStatus function was available with an HTTP trigger.
 
 ### 📸 Screenshots
 ![Task 7 Screenshot](Screenshots/Screenshot%202026-08-25%20215752.png)
@@ -144,12 +134,10 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 8 — Verify monitoring connection
 
 **Steps:**
-1. Open the Function App in the Azure portal.
-2. Go to **Application Insights** under Monitoring.
-3. Verify that Application Insights is enabled.
-4. Confirm that the connected Application Insights resource is displayed.
+1. Open the Function App and go to **Application Insights**.
+2. Verify that Application Insights is enabled and connected.
 
-**Observation:** The Function App was connected to Application Insights for monitoring and diagnostics.
+**Observation:** Application Insights was connected for monitoring and diagnostics.
 
 ### 📸 Screenshots
 ![Task 8 Screenshot](Screenshots/Screenshot%202026-08-25%20220337.png)
@@ -159,12 +147,11 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 9 — Restrict access to the function
 
 **Steps:**
-1. Open Cloud Shell and return to the function project folder.
-2. Change the function authorization level from **anonymous** to **function** as specified in the lab.
-3. Verify the updated authorization setting.
-4. Redeploy the function and wait for deployment to complete.
+1. Open the function project in Cloud Shell.
+2. Change the authorization level from **anonymous** to **function**.
+3. Redeploy the function and verify the updated setting.
 
-**Observation:** The function authorization level was changed so that a function key is required for access.
+**Observation:** Function-level authorization was enabled, requiring a function key for access.
 
 ### 📸 Screenshots
 ![Task 9 Screenshot 1](Screenshots/Screenshot%202026-08-25%20220527.png)
@@ -176,14 +163,11 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 10 — Test restricted access
 
 **Steps:**
-1. Open the previously tested function URL without a key.
-2. Verify that the request returns **401 Unauthorized**.
-3. Open the Function App and select **GetStatus → Function Keys**.
-4. Copy the default function key.
-5. Add the key to the URL using `?code=` and test the endpoint again.
-6. Verify that the function responds successfully after authorization.
+1. Open the function URL without a key and verify **401 Unauthorized**.
+2. Open **GetStatus → Function Keys** and copy the default key.
+3. Add the key using `?code=` and test the endpoint again.
 
-**Observation:** Unauthenticated access was rejected, while access using the function key was successful.
+**Observation:** Unauthenticated access was rejected and authorized access using the function key was successful.
 
 ### 📸 Screenshots
 ![Task 10 Screenshot 1](Screenshots/Screenshot%202026-08-25%20220915.png)
@@ -195,12 +179,11 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 11 — Review invocation logs
 
 **Steps:**
-1. Open **Application Insights** connected to the Function App.
-2. Open **Transaction search** under the Investigate section.
-3. Set the required time range and search for function requests.
-4. Review successful invocations and their execution details.
+1. Open the connected **Application Insights** resource.
+2. Open **Transaction search** and search for function requests.
+3. Review the invocation and execution details.
 
-**Observation:** Application Insights was used to review successful function invocations and execution information.
+**Observation:** Function invocations were successfully reviewed using Application Insights.
 
 ### 📸 Screenshots
 ![Task 11 Screenshot 1](Screenshots/Screenshot%202026-08-25%20221606.png)
@@ -212,11 +195,9 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 12 — Delete the resource group
 
 **Steps:**
-1. Open **Resource groups** in the Azure portal.
-2. Select the resource group created for the practical.
-3. Select **Delete resource group**.
-4. Enter the resource group name for confirmation and select **Delete**.
-5. Wait for the deletion notification.
+1. Open **Resource groups** and select the practical's resource group.
+2. Select **Delete resource group**.
+3. Confirm the resource group name and select **Delete**.
 
 ### 📸 Screenshots
 ![Task 12 Screenshot 1](Screenshots/Screenshot%202026-08-25%20221710.png)
@@ -232,13 +213,13 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 2. Remove the function project folder created during the practical.
 3. Verify that the cleanup is complete.
 
-**Observation:** The Azure resources and Cloud Shell project files were cleaned up after completing the practical.
+**Observation:** The Azure resources and project files were cleaned up successfully.
 
 ### 📸 Screenshot
 ![Task 13 Screenshot](Screenshots/Screenshot%202026-08-25%20222242.png)
 
 ### 4. Result
-The simple website endpoint was successfully created using Azure Functions. The HTTP-triggered function was configured, deployed, tested, monitored using Application Insights, and protected using function-level authorization.
+The website endpoint was successfully created using Azure Functions, deployed and tested. Function-level access control and Application Insights monitoring were also configured and verified.
 
 ### 5. Conclusion
-Azure Functions provides a serverless way to build and deploy HTTP endpoints without managing traditional servers. The practical demonstrated Function App configuration, function creation, deployment, endpoint testing, monitoring, access control and cleanup.
+The practical demonstrated Function App configuration, HTTP function creation, deployment, endpoint testing, monitoring, access control and resource cleanup using Azure Functions.
