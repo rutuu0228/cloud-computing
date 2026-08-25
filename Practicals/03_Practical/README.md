@@ -3,14 +3,13 @@
 ## Build a Simple Website Endpoint with Azure Functions
 
 ### 1. Aim
-To create and deploy a simple HTTP-triggered website endpoint using Azure Functions, test the endpoint, and review its execution and monitoring information.
+To create and deploy a simple HTTP-triggered website endpoint using Azure Functions, test the endpoint, and review its execution information.
 
 ### 2. Theory
 
 #### Azure Functions
 - Azure Functions is a serverless compute service used to run code without managing servers.
-- A function can be triggered by events such as HTTP requests.
-- An HTTP-triggered function provides an endpoint that can be accessed through a URL.
+- An HTTP-triggered function runs when an HTTP request is received and provides an endpoint URL.
 
 #### Function App
 - A Function App provides the environment required to host and run Azure Functions.
@@ -18,7 +17,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 
 #### HTTP Trigger
 - An HTTP trigger starts a function when an HTTP request is received.
-- The function can be tested through its HTTP endpoint using a browser or other HTTP client.
+- The function can be tested through its endpoint using a browser.
 
 ### 3. Procedure / Main Tasks
 
@@ -26,8 +25,8 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 
 **Steps:**
 1. In the Azure portal, select the **Cloud Shell** icon from the top toolbar.
-2. If prompted, select **Bash**.
-3. Select the lab subscription and create storage if Cloud Shell asks for it.
+2. Select **Bash** if prompted.
+3. Select the lab subscription and create storage if required.
 4. Wait until the Bash terminal opens and displays a `$` prompt.
 
 **Observation:** Azure Cloud Shell was opened successfully and the Bash command prompt was available.
@@ -42,7 +41,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 2 — Create the function project
 
 **Steps:**
-1. Use the Cloud Shell terminal to create the function project as instructed by the lab.
+1. Use Cloud Shell to create the function project as instructed by the lab.
 2. Select the required runtime and create the project files.
 3. Create the HTTP-triggered function using the specified function name.
 4. Verify that the function project is created successfully.
@@ -61,10 +60,10 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ## Task 3 — Deploy the function to Azure
 
 **Steps:**
-1. Use the Cloud Shell commands provided by the lab to deploy the function project.
+1. Use the Cloud Shell deployment command provided by the lab.
 2. Select the required Function App as the deployment target.
-3. Wait for the deployment to complete.
-4. Verify that the function is available in the Azure Function App.
+3. Wait for deployment to complete.
+4. Verify that the function is available in the Function App.
 
 **Observation:** The function project was deployed to the Azure Function App successfully.
 
@@ -83,7 +82,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 1. Open the deployed function's HTTP endpoint.
 2. Enter the endpoint URL in a browser.
 3. Send the request and observe the response.
-4. Verify that the function returns the expected response.
+4. Verify that the expected response is displayed.
 
 **Observation:** The HTTP endpoint responded successfully, confirming that the deployed function was running and accessible.
 
@@ -121,7 +120,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 1. Open the monitoring settings for the Function App.
 2. Enable or configure **Application Insights** as instructed by the lab.
 3. Save the configuration.
-4. Verify that monitoring is enabled for the Function App.
+4. Verify that monitoring is enabled.
 
 **Observation:** Application Insights was configured to provide monitoring information for the function.
 
@@ -138,9 +137,9 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 
 **Steps:**
 1. Open the function's access or authorization settings.
-2. Configure the access restriction specified in the lab.
+2. Configure the access restriction specified by the lab.
 3. Save the changes.
-4. Verify that the function now requires the configured access method.
+4. Verify that the configured access method is required.
 
 **Observation:** Access to the function was restricted according to the configured security settings.
 
@@ -178,7 +177,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 1. Open the monitoring or Application Insights information for the Function App.
 2. Review the function invocation records.
 3. Check the request and execution information.
-4. Verify that the recent function calls are recorded.
+4. Verify that recent function calls are recorded.
 
 **Observation:** Function invocation information was available for monitoring and review.
 
@@ -191,8 +190,8 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 
 ---
 
-## 4. Result
-The simple website endpoint was successfully created using Azure Functions. The HTTP-triggered function was deployed, tested through its endpoint, secured according to the lab instructions, and monitored using the available invocation information.
+### 4. Result
+The simple website endpoint was successfully created using Azure Functions. The HTTP-triggered function was deployed, tested through its endpoint, secured according to the lab instructions, and monitored using invocation information.
 
-## 5. Conclusion
-Azure Functions provides a serverless way to build and deploy lightweight HTTP endpoints without managing traditional web servers. The practical demonstrated function creation, deployment, testing, access control and monitoring.
+### 5. Conclusion
+Azure Functions provides a serverless method for building and deploying HTTP endpoints without managing traditional web servers. The practical demonstrated function creation, deployment, testing, access control and monitoring.
