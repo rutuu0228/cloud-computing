@@ -60,7 +60,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 
 ---
 
-## Task 1 — Open Cloud Shell
+## Task 3 — Open Cloud Shell
 
 **Steps:**
 1. Select the **Cloud Shell** icon in the Azure portal.
@@ -71,13 +71,13 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Observation:** Azure Cloud Shell was opened successfully and the Bash command prompt was available.
 
 ### 📸 Screenshots
-![Task 1 Screenshot 1](Screenshots/Screenshot%202026-08-25%20202138.png)
+![Task 3 Screenshot 1](Screenshots/Screenshot%202026-08-25%20202138.png)
 
-![Task 1 Screenshot 2](Screenshots/Screenshot%202026-08-25%20202505.png)
+![Task 3 Screenshot 2](Screenshots/Screenshot%202026-08-25%20202505.png)
 
 ---
 
-## Task 2 — Create the function project
+## Task 4 — Create the function project
 
 **Steps:**
 1. Create a new function project folder in Cloud Shell.
@@ -88,13 +88,13 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Observation:** The Node.js function project and HTTP-triggered function were created successfully.
 
 ### 📸 Screenshots
-![Task 2 Screenshot 1](Screenshots/Screenshot%202026-08-25%20202810.png)
+![Task 4 Screenshot 1](Screenshots/Screenshot%202026-08-25%20202810.png)
 
-![Task 2 Screenshot 2](Screenshots/Screenshot%202026-08-25%20202957.png)
+![Task 4 Screenshot 2](Screenshots/Screenshot%202026-08-25%20202957.png)
 
 ---
 
-## Task 3 — Deploy the function to Azure
+## Task 5 — Deploy the function to Azure
 
 **Steps:**
 1. Find the Function App name using Azure CLI.
@@ -105,11 +105,11 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Observation:** The GetStatus function was successfully deployed to the Azure Function App and an Invoke URL was provided.
 
 ### 📸 Screenshots
-![Task 3 Screenshot](Screenshots/Screenshot%202026-08-25%20203609.png)
+![Task 5 Screenshot](Screenshots/Screenshot%202026-08-25%20203609.png)
 
 ---
 
-## Task 1 — Test the HTTP endpoint in a browser
+## Task 6 — Test the HTTP endpoint in a browser
 
 **Steps:**
 1. Open a new browser tab.
@@ -120,13 +120,13 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Observation:** The HTTP endpoint responded successfully with the expected **Hello, world!** response.
 
 ### 📸 Screenshots
-![Task 1 Screenshot 1](Screenshots/Screenshot%202026-08-25%20214953.png)
+![Task 6 Screenshot 1](Screenshots/Screenshot%202026-08-25%20214953.png)
 
-![Task 1 Screenshot 2](Screenshots/Screenshot%202026-08-25%20215342.png)
+![Task 6 Screenshot 2](Screenshots/Screenshot%202026-08-25%20215342.png)
 
 ---
 
-## Task 2 — Verify the function in the portal
+## Task 7 — Verify the function in the portal
 
 **Steps:**
 1. Open **Function App** in the Azure portal.
@@ -137,11 +137,11 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Observation:** The GetStatus function was visible in the Function App with an enabled HTTP trigger.
 
 ### 📸 Screenshots
-![Task 2 Screenshot](Screenshots/Screenshot%202026-08-25%20215752.png)
+![Task 7 Screenshot](Screenshots/Screenshot%202026-08-25%20215752.png)
 
 ---
 
-## Task 3 — Verify monitoring connection
+## Task 8 — Verify monitoring connection
 
 **Steps:**
 1. Open the Function App in the Azure portal.
@@ -152,11 +152,11 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Observation:** The Function App was connected to Application Insights for monitoring and diagnostics.
 
 ### 📸 Screenshots
-![Task 3 Screenshot](Screenshots/Screenshot%202026-08-25%20220337.png)
+![Task 8 Screenshot](Screenshots/Screenshot%202026-08-25%20220337.png)
 
 ---
 
-## Task 4 — Restrict access to the function
+## Task 9 — Restrict access to the function
 
 **Steps:**
 1. Open Cloud Shell and return to the function project folder.
@@ -167,13 +167,13 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Observation:** The function authorization level was changed so that a function key is required for access.
 
 ### 📸 Screenshots
-![Task 4 Screenshot 1](Screenshots/Screenshot%202026-08-25%20220527.png)
+![Task 9 Screenshot 1](Screenshots/Screenshot%202026-08-25%20220527.png)
 
-![Task 4 Screenshot 2](Screenshots/Screenshot%202026-08-25%20220724.png)
+![Task 9 Screenshot 2](Screenshots/Screenshot%202026-08-25%20220724.png)
 
 ---
 
-## Task 5 — Test restricted access
+## Task 10 — Test restricted access
 
 **Steps:**
 1. Open the previously tested function URL without a key.
@@ -186,13 +186,13 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Observation:** Unauthenticated access was rejected, while access using the function key was successful.
 
 ### 📸 Screenshots
-![Task 5 Screenshot 1](Screenshots/Screenshot%202026-08-25%20220915.png)
+![Task 10 Screenshot 1](Screenshots/Screenshot%202026-08-25%20220915.png)
 
-![Task 5 Screenshot 2](Screenshots/Screenshot%202026-08-25%20221131.png)
+![Task 10 Screenshot 2](Screenshots/Screenshot%202026-08-25%20221131.png)
 
 ---
 
-## Task 6 — Review invocation logs
+## Task 11 — Review invocation logs
 
 **Steps:**
 1. Open **Application Insights** connected to the Function App.
@@ -203,13 +203,13 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Observation:** Application Insights was used to review successful function invocations and execution information.
 
 ### 📸 Screenshots
-![Task 6 Screenshot 1](Screenshots/Screenshot%202026-08-25%20221606.png)
+![Task 11 Screenshot 1](Screenshots/Screenshot%202026-08-25%20221606.png)
 
-![Task 6 Screenshot 2](Screenshots/Screenshot%202026-08-25%20221617.png)
+![Task 11 Screenshot 2](Screenshots/Screenshot%202026-08-25%20221617.png)
 
 ---
 
-## Delete the resource group
+## Task 12 — Delete the resource group
 
 **Steps:**
 1. Open **Resource groups** in the Azure portal.
@@ -219,13 +219,13 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 5. Wait for the deletion notification.
 
 ### 📸 Screenshots
-![Delete Resource Group Screenshot 1](Screenshots/Screenshot%202026-08-25%20221710.png)
+![Task 12 Screenshot 1](Screenshots/Screenshot%202026-08-25%20221710.png)
 
-![Delete Resource Group Screenshot 2](Screenshots/Screenshot%202026-08-25%20221733.png)
+![Task 12 Screenshot 2](Screenshots/Screenshot%202026-08-25%20221733.png)
 
 ---
 
-## Clean up Cloud Shell files
+## Task 13 — Clean up Cloud Shell files
 
 **Steps:**
 1. Open Azure Cloud Shell.
@@ -235,7 +235,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Observation:** The Azure resources and Cloud Shell project files were cleaned up after completing the practical.
 
 ### 📸 Screenshot
-![Clean Up Screenshot](Screenshots/Screenshot%202026-08-25%20222242.png)
+![Task 13 Screenshot](Screenshots/Screenshot%202026-08-25%20222242.png)
 
 ### 4. Result
 The simple website endpoint was successfully created using Azure Functions. The HTTP-triggered function was configured, deployed, tested, monitored using Application Insights, and protected using function-level authorization.
