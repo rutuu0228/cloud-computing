@@ -26,7 +26,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 **Steps:**
 1. In the Azure portal, select the **Cloud Shell** icon from the top toolbar.
 2. Select **Bash** if prompted.
-3. Select the lab subscription and create storage if required.
+3. Select the lab subscription and complete the setup if required.
 4. Wait until the Bash terminal opens and displays a `$` prompt.
 
 **Observation:** Azure Cloud Shell was opened successfully and the Bash command prompt was available.
@@ -51,9 +51,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ### 📸 Screenshots
 ![Task 2 Screenshot 1](Screenshots/Screenshot%202026-08-25%20201044.png)
 
-![Task 2 Screenshot 2](Screenshots/Screenshot%202026-08-25%20201203.png)
-
-![Task 2 Screenshot 3](Screenshots/Screenshot%202026-08-25%20201232.png)
+![Task 2 Screenshot 2](Screenshots/Screenshot%202026-08-25%20201232.png)
 
 ---
 
@@ -70,9 +68,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ### 📸 Screenshots
 ![Task 3 Screenshot 1](Screenshots/Screenshot%202026-08-25%20201436.png)
 
-![Task 3 Screenshot 2](Screenshots/Screenshot%202026-08-25%20201509.png)
-
-![Task 3 Screenshot 3](Screenshots/Screenshot%202026-08-25%20201913.png)
+![Task 3 Screenshot 2](Screenshots/Screenshot%202026-08-25%20201913.png)
 
 ---
 
@@ -89,9 +85,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ### 📸 Screenshots
 ![Task 4 Screenshot 1](Screenshots/Screenshot%202026-08-25%20202119.png)
 
-![Task 4 Screenshot 2](Screenshots/Screenshot%202026-08-25%20202138.png)
-
-![Task 4 Screenshot 3](Screenshots/Screenshot%202026-08-25%20202505.png)
+![Task 4 Screenshot 2](Screenshots/Screenshot%202026-08-25%20202505.png)
 
 ---
 
@@ -108,9 +102,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ### 📸 Screenshots
 ![Task 5 Screenshot 1](Screenshots/Screenshot%202026-08-25%20202810.png)
 
-![Task 5 Screenshot 2](Screenshots/Screenshot%202026-08-25%20202957.png)
-
-![Task 5 Screenshot 3](Screenshots/Screenshot%202026-08-25%20203427.png)
+![Task 5 Screenshot 2](Screenshots/Screenshot%202026-08-25%20203427.png)
 
 ---
 
@@ -127,9 +119,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ### 📸 Screenshots
 ![Task 6 Screenshot 1](Screenshots/Screenshot%202026-08-25%20203609.png)
 
-![Task 6 Screenshot 2](Screenshots/Screenshot%202026-08-25%20214707.png)
-
-![Task 6 Screenshot 3](Screenshots/Screenshot%202026-08-25%20214818.png)
+![Task 6 Screenshot 2](Screenshots/Screenshot%202026-08-25%20214818.png)
 
 ---
 
@@ -146,9 +136,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ### 📸 Screenshots
 ![Task 7 Screenshot 1](Screenshots/Screenshot%202026-08-25%20214953.png)
 
-![Task 7 Screenshot 2](Screenshots/Screenshot%202026-08-25%20215342.png)
-
-![Task 7 Screenshot 3](Screenshots/Screenshot%202026-08-25%20215752.png)
+![Task 7 Screenshot 2](Screenshots/Screenshot%202026-08-25%20215752.png)
 
 ---
 
@@ -165,9 +153,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ### 📸 Screenshots
 ![Task 8 Screenshot 1](Screenshots/Screenshot%202026-08-25%20220337.png)
 
-![Task 8 Screenshot 2](Screenshots/Screenshot%202026-08-25%20220527.png)
-
-![Task 8 Screenshot 3](Screenshots/Screenshot%202026-08-25%20220724.png)
+![Task 8 Screenshot 2](Screenshots/Screenshot%202026-08-25%20220724.png)
 
 ---
 
@@ -184,9 +170,7 @@ To create and deploy a simple HTTP-triggered website endpoint using Azure Functi
 ### 📸 Screenshots
 ![Task 9 Screenshot 1](Screenshots/Screenshot%202026-08-25%20220807.png)
 
-![Task 9 Screenshot 2](Screenshots/Screenshot%202026-08-25%20220915.png)
-
-![Task 9 Screenshot 3](Screenshots/Screenshot%202026-08-25%20221131.png)
+![Task 9 Screenshot 2](Screenshots/Screenshot%202026-08-25%20221131.png)
 
 ---
 
