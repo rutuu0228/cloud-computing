@@ -117,10 +117,6 @@ To set up a new employee's access using Microsoft Entra ID and Azure Role-Based 
 
 **Observation:** IAM showed that the user receives Reader permissions through group membership.
 
-**Screenshot:**
-
-![Task 7 – Check access with IAM](./screenshots/Screenshot%202026-08-27%20214043.png)
-
 ---
 
 ### Task 8 — Review the role assignment in the Activity Log
