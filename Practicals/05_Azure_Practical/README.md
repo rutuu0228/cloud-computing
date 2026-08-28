@@ -30,7 +30,6 @@ To securely share a file from Azure Blob Storage using a stored access policy an
 
 **Observation:** The resource group was created successfully and was ready for the storage resources.
 
-![Task 1](Screenshots/Screenshot%202026-08-28%20192042.png)
 
 #### Task 2 — Create the storage account
 **Steps:**
@@ -41,7 +40,6 @@ To securely share a file from Azure Blob Storage using a stored access policy an
 
 **Observation:** The storage account was created successfully.
 
-![Task 2](Screenshots/Screenshot%202026-08-28%20192238.png)
 
 #### Task 3 — Create the private container
 **Steps:**
