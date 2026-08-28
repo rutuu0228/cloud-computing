@@ -110,6 +110,17 @@ To configure Azure cost guardrails using **budgets, alerts, cost-tracking tags, 
 
 ---
 
+### Task 6 — Cleanup
+
+**Steps:**
+1. Remove the budget and policy assignment created for the practical.
+2. Delete the lab resource group after completing the required checks.
+3. Confirm that the temporary resources are removed.
+
+**Observation:** The resources created for the practical were cleaned up after completion.
+
+---
+
 ## 4. Result
 
 The Azure budget and alert thresholds were configured successfully. The **Allowed locations** policy was assigned to the resource group and tested to control resource creation according to the permitted region.
@@ -117,5 +128,3 @@ The Azure budget and alert thresholds were configured successfully. The **Allowe
 ## 5. Conclusion
 
 This practical demonstrated how **Azure Cost Management and Azure Policy** can work together to monitor cloud spending, configure cost alerts, and enforce resource-governance rules.
-
-> **Cleanup:** Remove the budget, policy assignment, and lab resource group after completing the practical as instructed. Cleanup screenshots are not repeated because resource deletion was already documented in the earlier practicals.
