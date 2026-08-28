@@ -4,20 +4,22 @@
 
 ### 1. Aim
 
-To configure Azure cost guardrails using **budgets, alerts, cost-tracking tags, and Azure Policy** to monitor and control cloud spending.
+To configure Azure cost guardrails using **budgets, alerts, cost-tracking tags, and Azure Policy** to monitor spending and control resource creation.
 
 ---
 
 ## 2. Theory
 
 ### Azure Cost Management
-- Azure Cost Management helps monitor and control cloud spending.
-- **Budgets** set spending limits and provide alerts when costs reach defined thresholds.
-- **Cost-tracking tags** help organize and identify resources for cost analysis.
+- Azure Cost Management helps monitor, analyze, and control cloud spending.
+- **Budgets** define a spending limit for a selected scope and time period.
+- **Alerts** notify users when actual or forecasted costs reach configured thresholds.
+- **Cost-tracking tags** help identify resources and organize their costs for analysis.
 
 ### Azure Policy
-- Azure Policy enforces organizational rules on Azure resources.
-- It can prevent non-compliant resource creation, such as creating resources in disallowed regions.
+- Azure Policy is used to enforce organizational rules on Azure resources.
+- Policies can restrict resource creation based on conditions such as allowed locations.
+- Policy assignments can be applied at a selected scope such as a resource group.
 
 ---
 
@@ -29,7 +31,8 @@ To configure Azure cost guardrails using **budgets, alerts, cost-tracking tags, 
 1. Sign in to the Azure portal.
 2. Search for **Cost Management** and open **Cost Management + Billing**.
 3. Under **Monitoring**, select **Budgets**.
-4. Select **+ Add**.
+4. Select **+ Add** to start creating a budget.
+5. Check that the required scope is selected before continuing.
 
 **Observation:** The Cost Management budget creation page was opened successfully.
 
@@ -42,12 +45,14 @@ To configure Azure cost guardrails using **budgets, alerts, cost-tracking tags, 
 **Steps:**
 1. Enter **gp-pilot-budget** as the budget name.
 2. Select **Monthly** as the reset period.
-3. Enter the required test amount.
-4. Select **Next** and configure the alert thresholds.
-5. Set the required actual-cost thresholds and alert recipient.
-6. Select **Create**.
+3. Enter the required test budget amount.
+4. Select **Next** to configure the alert conditions.
+5. Set the required actual-cost thresholds.
+6. Enter the required alert recipient.
+7. Review the configuration and select **Create**.
+8. Verify that the budget appears in the Budgets list.
 
-**Observation:** The budget was created with the required alert thresholds.
+**Observation:** The budget was created with the required amount, monthly reset period, and alert thresholds.
 
 ![Task 2 — Configure and create the budget](./screenshots/Screenshot%202026-08-28%20222849.png)
 
@@ -59,10 +64,11 @@ To configure Azure cost guardrails using **budgets, alerts, cost-tracking tags, 
 1. Search for **Policy** in the Azure portal.
 2. Under **Authoring**, select **Definitions**.
 3. Search for the **Allowed locations** policy.
-4. Select the policy and choose **Assign**.
-5. Set the scope to **rg-gp-cost-guardrails**.
-6. On the **Parameters** tab, select the permitted region.
-7. Select **Review + create**, then **Create**.
+4. Open the policy and select **Assign**.
+5. Set the assignment scope to **rg-gp-cost-guardrails**.
+6. Open the **Parameters** tab.
+7. Select the permitted region.
+8. Select **Review + create**, check the assignment, and select **Create**.
 
 **Observation:** The **Allowed locations** policy was assigned to the resource group with the permitted region configured.
 
@@ -77,13 +83,14 @@ To configure Azure cost guardrails using **budgets, alerts, cost-tracking tags, 
 2. Select **rg-gp-cost-guardrails** as the resource group.
 3. Enter a temporary storage account name.
 4. Select a region that is **not allowed** by the policy.
-5. Select **Review + create**.
-6. Confirm that creation is denied with a policy error.
-7. Change the region to the allowed location and verify that validation passes.
+5. Select **Review + create** and check the validation result.
+6. Confirm that creation is denied because of the policy restriction.
+7. Change the region to the allowed location.
+8. Verify that the validation passes for the permitted region.
 
 **Observation:** Azure Policy prevented resource creation in the disallowed region and allowed it in the permitted region.
 
-> **Note:** The screenshots for this task were instruction/validation captures only, so no screenshot is included in the practical.
+> **Note:** The available captures for this task were instruction/validation screens, so no screenshot is included here.
 
 ---
 
@@ -93,21 +100,22 @@ To configure Azure cost guardrails using **budgets, alerts, cost-tracking tags, 
 1. Search for **Policy** in the Azure portal.
 2. Select **Compliance** from the left menu.
 3. Find the **Allowed locations** policy assignment.
-4. Open it and review the compliance details.
-5. Confirm that resources in the allowed region are shown as compliant.
+4. Open the assignment to view its compliance information.
+5. Review the resources evaluated by the policy.
+6. Confirm the compliance status for resources in the allowed region.
 
-**Observation:** The Policy Compliance dashboard was used to verify the enforcement status of the Allowed locations policy.
+**Observation:** The Policy Compliance dashboard was used to review the enforcement status of the **Allowed locations** policy.
 
-> **Note:** No separate screenshot is included because the available capture was an instruction screen rather than practical evidence.
+> **Note:** No screenshot is included because the available capture was an instruction screen rather than practical evidence.
 
 ---
 
 ## 4. Result
 
-The Azure budget and alert thresholds were configured successfully, and an **Allowed locations** Azure Policy was assigned and validated to control resource creation by region.
+The Azure budget and alert thresholds were configured successfully. The **Allowed locations** policy was assigned to the resource group and tested to control resource creation according to the permitted region.
 
 ## 5. Conclusion
 
-This practical demonstrated how **Azure Cost Management and Azure Policy** can be used together to monitor spending and enforce organizational cost and resource-governance rules.
+This practical demonstrated how **Azure Cost Management and Azure Policy** can work together to monitor cloud spending, configure cost alerts, and enforce resource-governance rules.
 
-> **Cleanup:** The policy assignment, budget, and resource group should be removed after the practical as instructed by the lab. Cleanup screenshots are not repeated here because resource deletion was already documented in the earlier practicals.
+> **Cleanup:** Remove the budget, policy assignment, and lab resource group after completing the practical as instructed. Cleanup screenshots are not repeated because resource deletion was already documented in the earlier practicals.
