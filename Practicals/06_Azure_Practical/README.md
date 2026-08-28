@@ -90,8 +90,6 @@ To configure Azure cost guardrails using **budgets, alerts, cost-tracking tags, 
 
 **Observation:** Azure Policy prevented resource creation in the disallowed region and allowed it in the permitted region.
 
-> **Note:** The available captures for this task were instruction/validation screens, so no screenshot is included here.
-
 ---
 
 ### Task 5 — Review policy compliance
@@ -106,7 +104,6 @@ To configure Azure cost guardrails using **budgets, alerts, cost-tracking tags, 
 
 **Observation:** The Policy Compliance dashboard was used to review the enforcement status of the **Allowed locations** policy.
 
-> **Note:** No screenshot is included because the available capture was an instruction screen rather than practical evidence.
 
 ---
 
