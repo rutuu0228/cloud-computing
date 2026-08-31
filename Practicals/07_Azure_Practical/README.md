@@ -4,23 +4,23 @@
 
 ### 1. Aim
 
-To configure Azure Service Health and Activity Log alerts and connect them with an action group for monitoring Azure platform issues and resource changes.
+To configure Azure Service Health and Activity Log alerts and connect them with an action group for monitoring Azure issues and resource changes.
 
 ---
 
 ## 2. Theory
 
 ### Azure Service Health
-- Azure Service Health provides information about Azure service issues, planned maintenance, and health advisories.
-- **Service Health alerts** notify the operations team about events that may affect Azure resources.
+- Provides information about Azure service issues, planned maintenance, and health advisories.
+- Service Health alerts notify users about events that may affect Azure resources.
 
 ### Azure Activity Log Alerts
-- Activity Log records management operations performed on Azure resources.
-- Activity Log alerts can notify users when selected operations, such as resource deletion, occur.
+- Activity Log records management operations on Azure resources.
+- Alerts can notify users when selected operations occur.
 
 ### Action Group
-- An action group defines the notification method and recipients for an Azure alert.
-- The same action group can be reused by multiple alert rules.
+- Defines the notification method and recipients for an alert.
+- The same action group can be used by multiple alerts.
 
 ---
 
@@ -29,13 +29,11 @@ To configure Azure Service Health and Activity Log alerts and connect them with 
 ### Task 1 — Prepare the environment
 
 **Steps:**
-1. Sign in to the Azure portal using the lab account.
-2. Search for **Resource groups** and select it.
-3. Select **+ Create**.
-4. Enter the resource group name **rg-gp-monitoring-alerts**.
-5. Select the required region.
-6. Select **Review + create** and then **Create**.
-7. Note the email address to be used for alert notifications.
+1. Sign in to the Azure portal.
+2. Open **Resource groups** and select **+ Create**.
+3. Enter **rg-gp-monitoring-alerts** and select the required region.
+4. Select **Review + create → Create**.
+5. Note the email address to be used for notifications.
 
 **Observation:** The resource group was created successfully for the monitoring resources.
 
@@ -46,17 +44,14 @@ To configure Azure Service Health and Activity Log alerts and connect them with 
 ### Task 2 — Create the action group
 
 **Steps:**
-1. Search for **Monitor** and open it.
-2. Select **Alerts** from the left menu.
-3. Select **Action groups**.
-4. Select **+ Create**.
-5. Select **rg-gp-monitoring-alerts** as the resource group.
-6. Enter **ag-gp-ops-email** as the action group name and **OpsEmail** as the display name.
-7. Add the required email notification.
-8. Review the configuration and select **Create**.
-9. Test the action group if required and verify the notification configuration.
+1. Open **Monitor → Alerts → Action groups**.
+2. Select **+ Create** and choose **rg-gp-monitoring-alerts**.
+3. Enter **ag-gp-ops-email** as the action group name and **OpsEmail** as the display name.
+4. Add the required email notification.
+5. Select **Review + create → Create**.
+6. Test the action group if required.
 
-**Observation:** The action group was created successfully and configured to notify the operations team.
+**Observation:** The action group was created and configured for email notifications.
 
 ![Task 2 — Create the action group](./Screenshtos/Screenshot%202026-08-31%20213521.png)
 
@@ -67,13 +62,12 @@ To configure Azure Service Health and Activity Log alerts and connect them with 
 ### Task 3 — Navigate to Service Health
 
 **Steps:**
-1. Search for **Service Health** in the Azure portal.
-2. Open **Service Health**.
-3. Select **Service issues** and review active incidents.
-4. Select **Planned maintenance** and review upcoming maintenance.
-5. Select **Health advisories** to review other Azure recommendations.
+1. Search for and open **Service Health**.
+2. Review **Service issues**.
+3. Review **Planned maintenance**.
+4. Review **Health advisories**.
 
-**Observation:** Service Health was reviewed to understand current incidents, planned maintenance, and health advisories.
+**Observation:** Service Health was reviewed for incidents, maintenance, and advisories.
 
 ![Task 3 — Navigate to Service Health](./Screenshtos/Screenshot%202026-08-31%20214207.png)
 
@@ -82,29 +76,25 @@ To configure Azure Service Health and Activity Log alerts and connect them with 
 ### Task 4 — Create the Service Health alert rule
 
 **Steps:**
-1. In Service Health, select **Health alerts** and choose **+ Create service health alert**.
-2. Select the required subscription.
-3. Keep all services selected or select the required services.
-4. Set the region to **Global**.
-5. Select **Service issue** and **Planned maintenance** as event types.
-6. In **Actions**, select **ag-gp-ops-email**.
-7. In **Details**, select **rg-gp-monitoring-alerts** as the resource group.
-8. Enter **ar-gp-service-health** as the alert rule name.
-9. Keep the alert enabled and select **Create**.
+1. In Service Health, select **Health alerts → + Create service health alert**.
+2. Select the required subscription and region **Global**.
+3. Select **Service issue** and **Planned maintenance** as event types.
+4. Under Actions, select **ag-gp-ops-email**.
+5. Select **rg-gp-monitoring-alerts** and enter **ar-gp-service-health**.
+6. Keep the alert enabled and select **Create**.
 
-**Observation:** A Service Health alert was configured to notify the operations team about service issues and planned maintenance.
+**Observation:** A Service Health alert was configured for service issues and planned maintenance.
 
-> **Note:** The available captures for this task were lab instruction screens, so no instruction screenshot is included here.
+*No screenshot included because the available capture was an instruction screen.*
 
 ---
 
 ### Task 5 — Open the Activity Log alert creation page
 
 **Steps:**
-1. Search for **Monitor** and open it.
-2. Select **Alerts**.
-3. Select **+ Create** and then **Alert rule**.
-4. Open the alert creation page for the Activity Log alert.
+1. Open **Monitor → Alerts**.
+2. Select **+ Create → Alert rule**.
+3. Open the Activity Log alert creation page.
 
 **Observation:** The Activity Log alert creation page was opened successfully.
 
@@ -113,70 +103,58 @@ To configure Azure Service Health and Activity Log alerts and connect them with 
 ### Task 6 — Configure the Activity Log alert condition
 
 **Steps:**
-1. For **Scope**, select **Select scope**.
-2. Filter by resource type **Resource groups**.
-3. Select **rg-gp-monitoring-alerts** and apply the scope.
-4. Open the **Condition** tab.
-5. For Signal name, select **Delete resource group**.
-6. Set **Severity** to **Sev 2 - Warning**.
-7. Keep the remaining signal settings as required by the lab.
+1. Select **Select scope** and choose **rg-gp-monitoring-alerts**.
+2. Open **Condition**.
+3. Select **Delete resource group** as the signal.
+4. Set **Severity** to **Sev 2 - Warning**.
+5. Keep the remaining settings as required by the lab.
 
-**Observation:** The alert condition was configured to detect resource-group deletion events.
+**Observation:** The condition was configured to detect resource-group deletion events.
 
-> **Note:** No practical screenshot is included because the available capture shows the lab instructions rather than the completed Azure configuration.
+*No screenshot included because the available capture showed the lab instructions.*
 
 ---
 
 ### Task 7 — Attach the action group and create the alert
 
 **Steps:**
-1. Open the **Actions** tab.
-2. Select **Select action groups** and choose **ag-gp-ops-email**.
-3. Open the **Details** tab.
-4. Select **rg-gp-monitoring-alerts** as the resource group.
-5. Enter **ar-gp-activity-delete** as the alert rule name.
-6. Set **Severity** to **Sev 2 - Warning**.
-7. Keep **Enable alert rule upon creation** selected.
-8. Select **Review + create** and then **Create**.
-9. Return to **Monitor → Alerts → Alert rules** and verify both alert rules.
+1. Open **Actions** and select **ag-gp-ops-email**.
+2. Open **Details** and select **rg-gp-monitoring-alerts**.
+3. Enter **ar-gp-activity-delete** as the alert rule name.
+4. Set severity to **Sev 2 - Warning** and keep the alert enabled.
+5. Select **Review + create → Create**.
+6. Verify both alert rules under **Monitor → Alerts → Alert rules**.
 
-**Observation:** The Activity Log alert was created and connected to the same action group.
-
-> **Note:** No screenshot is included because the available capture is an instruction/validation screen.
+**Observation:** The Activity Log alert was created and connected to the action group.
 
 ---
 
 ### Task 8 — Review alert rule details
 
 **Steps:**
-1. In the alert rules list, open **ar-gp-service-health**.
-2. Review the Condition section and confirm **Service issue** and **Planned maintenance** events.
-3. Review the Actions section and confirm **ag-gp-ops-email**.
-4. Return to the alert rules list.
-5. Open **ar-gp-activity-delete**.
-6. Review its condition, action group, severity, and enabled status.
+1. Open **ar-gp-service-health** and review its conditions and action group.
+2. Open **ar-gp-activity-delete** and review its condition, severity, and action group.
+3. Confirm that both alerts are enabled.
 
-**Observation:** Both alert rules were reviewed and their conditions, notification actions, and severity settings were verified.
+**Observation:** Both alert rules were reviewed successfully.
 
 ---
 
 ### Task 9 — Cleanup
 
 **Steps:**
-1. Open **Monitor → Alerts → Alert rules**.
-2. Delete **ar-gp-activity-delete** and **ar-gp-service-health**.
-3. Delete the **ag-gp-ops-email** action group.
-4. Open **Resource groups** and delete **rg-gp-monitoring-alerts**.
-5. Confirm that the resource group and monitoring resources are removed.
+1. Delete **ar-gp-activity-delete** and **ar-gp-service-health**.
+2. Delete **ag-gp-ops-email**.
+3. Delete **rg-gp-monitoring-alerts** and confirm cleanup.
 
-**Observation:** The monitoring resources created for the practical were cleaned up successfully.
+**Observation:** The monitoring resources were cleaned up successfully.
 
 ---
 
 ## 4. Result
 
-The Azure Service Health and Activity Log alerts were configured successfully. An action group was created for notifications, and alerts were configured to monitor Azure service events and resource-group deletion activities.
+Azure Service Health and Activity Log alerts were configured successfully with an action group for notifications.
 
 ## 5. Conclusion
 
-This practical demonstrated how **Azure Service Health, Activity Log alerts, and Action Groups** can be used together to monitor Azure platform issues and important resource-management activities.
+This practical demonstrated how **Service Health, Activity Log alerts, and Action Groups** can be used to monitor Azure issues and important resource-management activities.
