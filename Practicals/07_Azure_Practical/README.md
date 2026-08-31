@@ -55,8 +55,6 @@ To configure Azure Service Health and Activity Log alerts and connect them with 
 
 ![Task 2 — Create the action group](./Screenshtos/Screenshot%202026-08-31%20213521.png)
 
-![Task 2 — Test the action group](./Screenshtos/Screenshot%202026-08-31%20214038.png)
-
 ---
 
 ### Task 3 — Navigate to Service Health
