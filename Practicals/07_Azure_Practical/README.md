@@ -85,7 +85,6 @@ To configure Azure Service Health and Activity Log alerts and connect them with 
 
 **Observation:** A Service Health alert was configured for service issues and planned maintenance.
 
-*No screenshot included because the available capture was an instruction screen.*
 
 ---
 
@@ -111,7 +110,6 @@ To configure Azure Service Health and Activity Log alerts and connect them with 
 
 **Observation:** The condition was configured to detect resource-group deletion events.
 
-*No screenshot included because the available capture showed the lab instructions.*
 
 ---
 
